@@ -10,4 +10,8 @@ node('workers'){
     stage('Quality Tests'){
         sh 'npm run lint'
     }
+
+    stage('Build'){
+        docker.build(imageName)
+    }
 }
